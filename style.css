@@ -1,0 +1,274 @@
+/* General */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    margin: 0;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #578A7C;
+    margin-bottom: 60px;
+    letter-spacing: 2px;
+}
+
+.placeholder-image {
+    background-color: #e0e0e0;
+    border-radius: 8px;
+}
+
+/* Header */
+.hero {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.hero .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 0 0 16px 0;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto 32px;
+    object-fit: contain;
+}
+
+.present-text {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #578A7C;
+    color: #fff;
+    padding: 16px 48px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: #4a756a;
+    transform: translateY(-2px);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(87, 138, 124, 0.7);
+    }
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 10px 20px rgba(87, 138, 124, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(87, 138, 124, 0);
+    }
+}
+
+/* Achievements */
+.achievements-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    text-align: center;
+}
+
+.achievements-list li {
+    background-color: #f9f9f9;
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 5px solid #578A7C;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Profile */
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.flex-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.voice-card {
+    background-color: #f9f9f9;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.voice-initial {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    background-color: #578A7C;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.voice-card p {
+    margin: 0;
+}
+
+.voice-name {
+    text-align: right;
+    margin-top: 16px !important;
+    font-weight: bold;
+}
+
+/* Register Form */
+.register {
+    background-color: #f9f9f9;
+}
+
+.form-section-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 0 auto 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.myasp-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Overriding MyASP Form Styles */
+.myForm .input_unit {
+    margin-bottom: 20px;
+}
+
+.myForm label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.myForm .my_column.my_right {
+    margin: 0;
+}
+
+.myForm input[type="text"] {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.myForm .form_input_label.required::after {
+    position: relative;
+    top: -2px;
+}
+
+.myForm .submit input[type="submit"] {
+    width: 100%;
+    background-color: #578A7C;
+    color: #fff;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.myForm .submit input[type="submit"]:hover {
+    background-color: #4a756a;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 24px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-title { font-size: 2.5rem; }
+    .section-title { font-size: 2rem; }
+    .flex-container, .flex-container.reverse {
+        flex-direction: column;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    .myasp-form-container {
+        padding: 24px;
+    }
+}
