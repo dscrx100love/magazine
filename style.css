@@ -80,6 +80,10 @@ body {
     animation: pulse 2s infinite;
 }
 
+.cta-bottom {
+    text-align: center;
+}
+
 .cta-button:hover {
     background-color: #4a756a;
     transform: translateY(-2px);
