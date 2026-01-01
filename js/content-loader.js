@@ -65,6 +65,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.appendChild(newScript);
             }
 
+            // 3.5 Override Hero Image if specified
+            if (window.HERO_IMAGE) {
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    heroImage.src = window.HERO_IMAGE;
+                }
+            }
+
             // 4. Override Form Action URL if specified in global config
             if (window.FORM_ACTION_URL) {
                 const forms = document.querySelectorAll('form');
