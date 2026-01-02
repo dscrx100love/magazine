@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const packageImg = document.querySelector('.form-section-image');
                 if (packageImg) {
                     const copy = document.createElement('h3');
-                    const copy = document.createElement('h3');
                     copy.className = 'bonus-copy';
                     // Allow HTML tags like <br class="sp-only">
                     copy.innerHTML = window.BONUS_COPY;
