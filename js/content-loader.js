@@ -78,14 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 const packageImg = document.querySelector('.form-section-image');
                 if (packageImg) {
                     const copy = document.createElement('h3');
+                    const copy = document.createElement('h3');
                     copy.className = 'bonus-copy';
-                    copy.textContent = window.BONUS_COPY;
+                    // Allow HTML tags like <br class="sp-only">
+                    copy.innerHTML = window.BONUS_COPY;
                     copy.style.textAlign = 'center';
                     copy.style.marginBottom = '24px';
                     copy.style.fontSize = '1.8rem';
                     copy.style.fontWeight = 'bold';
                     copy.style.color = '#578A7C'; // Theme color
                     copy.style.lineHeight = '1.4';
+
+                    // Inject styling for .sp-br (responsive break)
+                    const style = document.createElement('style');
+                    style.innerHTML = `
+                        .sp-br { display: none; }
+                        @media (max-width: 768px) {
+                            .sp-br { display: block; }
+                        }
+                    `;
+                    document.head.appendChild(style);
+
                     packageImg.parentNode.insertBefore(copy, packageImg);
                 }
             }
