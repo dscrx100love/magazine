@@ -73,6 +73,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // 3.6 Inject Bonus Copy if specified
+            if (window.BONUS_COPY) {
+                const packageImg = document.querySelector('.form-section-image');
+                if (packageImg) {
+                    const copy = document.createElement('h3');
+                    copy.className = 'bonus-copy';
+                    copy.textContent = window.BONUS_COPY;
+                    copy.style.textAlign = 'center';
+                    copy.style.marginBottom = '1.5em';
+                    copy.style.fontSize = '1.4em';
+                    copy.style.color = '#333';
+                    packageImg.parentNode.insertBefore(copy, packageImg);
+                }
+            }
+
             // 4. Override Form Action URL if specified in global config
             if (window.FORM_ACTION_URL) {
                 const forms = document.querySelectorAll('form');
