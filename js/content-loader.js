@@ -81,9 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     copy.className = 'bonus-copy';
                     copy.textContent = window.BONUS_COPY;
                     copy.style.textAlign = 'center';
-                    copy.style.marginBottom = '1.5em';
-                    copy.style.fontSize = '1.4em';
-                    copy.style.color = '#333';
+                    copy.style.marginBottom = '24px';
+                    copy.style.fontSize = '1.8rem';
+                    copy.style.fontWeight = 'bold';
+                    copy.style.color = '#578A7C'; // Theme color
+                    copy.style.lineHeight = '1.4';
                     packageImg.parentNode.insertBefore(copy, packageImg);
                 }
             }
