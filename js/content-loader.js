@@ -88,17 +88,50 @@ document.addEventListener('DOMContentLoaded', () => {
                     copy.style.color = '#578A7C'; // Theme color
                     copy.style.lineHeight = '1.4';
 
-                    // Inject styling for .sp-br (responsive break)
+                    // Inject styling for .sp-br and triangles
                     const style = document.createElement('style');
                     style.innerHTML = `
                         .sp-br { display: none; }
                         @media (max-width: 768px) {
                             .sp-br { display: block; }
                         }
+                        .bonus-arrows {
+                            text-align: center;
+                            margin-bottom: 24px;
+                            line-height: 1;
+                        }
+                        .bonus-arrow {
+                            display: inline-block;
+                            width: 0;
+                            height: 0;
+                            border-left: 10px solid transparent;
+                            border-right: 10px solid transparent;
+                            border-top: 15px solid #333; /* Text color */
+                            margin: 0 4px;
+                            animation: arrow-bounce 1.5s infinite;
+                            opacity: 0.6;
+                        }
+                        .bonus-arrow:nth-child(2) { animation-delay: 0.2s; }
+                        .bonus-arrow:nth-child(3) { animation-delay: 0.4s; }
+                        @keyframes arrow-bounce {
+                            0%, 100% { transform: translateY(0); opacity: 0.6; }
+                            50% { transform: translateY(5px); opacity: 1; }
+                        }
                     `;
                     document.head.appendChild(style);
 
+                    // Create container for arrows
+                    const arrowContainer = document.createElement('div');
+                    arrowContainer.className = 'bonus-arrows';
+                    for (let i = 0; i < 3; i++) {
+                        const arrow = document.createElement('div');
+                        arrow.className = 'bonus-arrow';
+                        arrowContainer.appendChild(arrow);
+                    }
+
+                    // Insert Copy -> Arrows -> Image
                     packageImg.parentNode.insertBefore(copy, packageImg);
+                    packageImg.parentNode.insertBefore(arrowContainer, packageImg);
                 }
             }
 
