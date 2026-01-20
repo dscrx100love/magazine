@@ -73,6 +73,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            // 3.5.1 Remove Hero Image if specified
+            if (window.HIDE_HERO_IMAGE) {
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    heroImage.remove();
+                }
+            }
+
+            // 3.5.2 Remove Top Form if specified
+            if (window.HIDE_TOP_FORM) {
+                const headerFormContainer = document.querySelector('header .myasp-form-container');
+                if (headerFormContainer) {
+                    headerFormContainer.remove();
+                }
+            }
+
             // 3.6 Inject Bonus Copy if specified
             if (window.BONUS_COPY) {
                 const packageImg = document.querySelector('.form-section-image');
