@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const footer = doc.querySelector('footer');
             const validationScript = doc.querySelector('script[src*="validation.js"]'); // MyASP validation script
 
-            if (header) document.body.appendChild(header);
+            if (header && !window.HIDE_HEADER) document.body.appendChild(header);
             if (main) document.body.appendChild(main);
             if (footer) document.body.appendChild(footer);
             if (validationScript) {
